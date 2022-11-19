@@ -20,16 +20,14 @@ function initAccordion() {
 
 initAccordion();
 
-
-
-function animaScroll () {
+function animaScroll() {
     const sections = document.querySelectorAll('.js-scroll');
     const agents = document.querySelectorAll('.agent');
-    console.log();
+    window.addEventListener('scroll', animaScroll);
 
     sections.forEach((section) => {
         const sectionTop = section.getBoundingClientRect().top - 750;
-        if(sectionTop < 0) {
+        if (sectionTop < 0) {
             section.classList.add('ativo');
         }
     });
@@ -38,12 +36,27 @@ function animaScroll () {
         const agentTop = agent.getBoundingClientRect().top - 850;
         agent.classList.add('js-scroll');
 
-        if(agentTop < 0) {
+        if (agentTop < 0) {
             agent.classList.add('ativo');
         }
     });
 };
 
-animaScroll(); 
+animaScroll();
 
-window.addEventListener('scroll', animaScroll);
+function responsiveNavBarLogo() {
+    const logo = document.querySelector('.js-icone');
+    const mobileScreen = window.innerWidth;
+
+    if(mobileScreen < 720) {
+        logo.classList.add('responsive');
+    } else {
+        logo.classList.remove('responsive');
+    }
+
+    window.addEventListener('resize', responsiveNavBarLogo);
+};
+
+responsiveNavBarLogo();
+
+
