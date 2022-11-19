@@ -127,7 +127,7 @@ img{
 
 .js-accordion p {
     display: none;
-    animation: slideWow .5s ;
+    animation: slideDown 0.8s forwards;
 }
 
 .js-accordion h2::after {
@@ -208,6 +208,20 @@ img{
     color: #ff4655;
     
 }
+
+.js-scroll{
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+    transition: 0.5s;
+}
+
+.js-scroll.ativo {
+    opacity: 1;
+    transition: 0.5s;
+    transform: translate3d(0, 0, 0)
+}
+
+
 
 @media  screen and (max-width: 924px) {
     iframe{

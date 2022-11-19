@@ -19,3 +19,31 @@ function initAccordion() {
 };
 
 initAccordion();
+
+
+
+function animaScroll () {
+    const sections = document.querySelectorAll('.js-scroll');
+    const agents = document.querySelectorAll('.agent');
+    console.log();
+
+    sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top - 750;
+        if(sectionTop < 0) {
+            section.classList.add('ativo');
+        }
+    });
+
+    agents.forEach((agent) => {
+        const agentTop = agent.getBoundingClientRect().top - 850;
+        agent.classList.add('js-scroll');
+
+        if(agentTop < 0) {
+            agent.classList.add('ativo');
+        }
+    });
+};
+
+animaScroll(); 
+
+window.addEventListener('scroll', animaScroll);
