@@ -1,0 +1,21 @@
+.btn-backTop {
+  background-color: #292929;
+  position: fixed;
+  border: none;
+  right: 2rem;
+  bottom: 2rem;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  color: #ff4655;
+  display: none;
+}
+
+.btn-backTop:hover {
+  cursor: pointer;
+}
+
+.btn-backTop.ativo {
+  display: block;
+}

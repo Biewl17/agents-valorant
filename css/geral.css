@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", monospace;
+  scroll-behavior: smooth;
+}
+
+.header-container {
+  width: 100%;
+  height: 4rem;
+  background-color: #ff4655;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+h2,
+h1 {
+  color: #292929;
+}
+
+.header-list,
+a {
+  display: flex;
+  list-style: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  font-weight: 500;
+}
+
+.header-list li {
+  margin: 0rem 1rem 0rem 0rem;
+  list-style: none;
+  font-size: 1.1rem;
+  transition: 0.1s ease-in-out;
+}
+
+.header-list a:hover {
+  color: white;
+  transition: color 0.3s;
+}
+
+.header-h1 h1 {
+  font-size: max(70px, 5vw);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.agent-text h2 {
+  font-size: max(15px, 1.3rem);
+  text-transform: uppercase;
+}
+
+.agent-text h2::before {
+  content: "";
+  width: 10%;
+  height: 10px;
+  display: inline-block;
+  background-color: #ff4655;
+  margin-right: 10px;
+}
+
+.agent-text p {
+  font-size: 1rem;
+  line-height: 25px;
+}
+
+.agent-text {
+  display: grid;
+  grid-template-columns: repeat(3, 16%);
+  gap: 100px;
+  margin-top: 2%;
+  justify-content: center;
+}
+
+.agent {
+  width: max(150px, 100%);
+  height: max(50px, 100%);
+}
+
+img {
+  width: max(160px, 100%);
+}
+
+.faq-container {
+  display: flex;
+  justify-content: center;
+}
+
+.faq-text {
+  width: 40%;
+}
+
+.text {
+  margin: 3%;
+}
+
+.text p {
+  font-size: 1.1rem;
+}
+
+.faq-text h1 {
+  font-size: max(70px, 5vw);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.faq-text h2 {
+  font-size: max(15px, 1.3rem);
+  text-transform: uppercase;
+  border: 1px solid #ff4655;
+  padding: 20px;
+  color: #292929;
+}
+
+.faq-text h2::before {
+  content: "";
+  width: 20px;
+  height: 10px;
+  display: inline-block;
+  background-color: #ff4655;
+  margin-right: 1rem;
+}
+
+.js-accordion p {
+  display: none;
+  animation: slideDown 0.8s forwards;
+}
+
+.js-accordion h2::after {
+  content: " +";
+  font-size: 1.5rem;
+  color: #ff4655;
+}
+
+.js-accordion h2.ativo::after {
+  content: " -";
+  font-size: 1.5rem;
+}
+
+.js-accordion p.ativo {
+  display: block;
+  animation: slideDown 0.8s forwards;
+  border: 1px solid #ff4655;
+  padding: 10px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    max-height: 350px;
+    opacity: 1;
+  }
+}
+
+.title-contato,
+.faq-container h1 {
+  font-size: max(70px, 5vw);
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  margin-top: 70px;
+}
+
+.contato dt::before {
+  content: "";
+  width: 20px;
+  height: 10px;
+  display: inline-block;
+  background-color: #ff4655;
+  margin-right: 1rem;
+}
+
+.contato-section {
+  display: flex;
+  justify-content: center;
+}
+
+.contato {
+  margin-left: 2rem;
+  font-size: 1rem;
+}
+
+.footer-container {
+  background-color: #ff4655;
+  margin-top: 10rem;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-top {
+  width: 200px;
+  height: 100px;
+  background-color: #ff4655;
+  color: #ff4655;
+}
+
+.js-scroll-right {
+  opacity: 0;
+  transform: translate3d(-30px, 0, 0);
+  transition: 0.5s;
+}
+
+.js-scroll-right.ativo {
+  opacity: 1;
+  transition: 0.5s;
+  transform: translate3d(0, 0, 0);
+}
+
+.js-scroll {
+  opacity: 0;
+  transform: translate3d(0, -50px, 0);
+  transition: 0.5s;
+}
+
+.js-scroll.ativo {
+  opacity: 1;
+  transition: 0.5s;
+  transform: translate3d(0, 0, 0);
+}
+
+.js-icone.responsive {
+  display: none;
+}
+
+@media screen and (max-width: 924px) {
+  iframe {
+    width: 30rem;
+  }
+
+  .agent-text {
+    grid-template-columns: repeat(2, 16%);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  iframe {
+    width: 15rem;
+  }
+
+  .agent-text {
+    grid-template-columns: repeat(2, 15%);
+  }
+}
